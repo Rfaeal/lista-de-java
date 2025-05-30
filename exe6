@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ListaDeProdutos {
+    public static void main(String[] args) {
+        ArrayList<String> produtos = new ArrayList<>();
+        produtos.add("Arroz");
+        produtos.add("Feijão");
+        produtos.add("Macarrão");
+        produtos.add("Leite");
+        produtos.add("Café");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o nome de um produto para buscar: ");
+        String nomeProduto = scanner.nextLine();
+
+        if (produtos.contains(nomeProduto)) {
+            System.out.println("Produto encontrado na lista.");
+        } else {
+            System.out.println("Produto não encontrado.");
+        }
+
+        scanner.close();
+    }
+}
