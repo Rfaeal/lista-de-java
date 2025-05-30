@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class ComparacaoPerformance {
+    public static void main(String[] args) {
+        ArrayList<String> listaNomes = new ArrayList<>();
+        HashMap<String, Integer> mapaNomes = new HashMap<>();
+
+        for (int i = 0; i < 10000; i++) {
+            String nome = "Nome" + i;
+            listaNomes.add(nome);
+            mapaNomes.put(nome, i);
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o nome a ser buscado (ex: Nome9999): ");
+        String nomeBusca = scanner.nextLine();
+
+        long inicioLista = System.currentTimeMillis();
+        boolean encontradoLista = false;
+        for (String nome : listaNomes) {
+            if (nome.equals(nomeBusca)) {
+                encontradoLista = true;
+                break;
+            }
+        }
+        long fimLista = System.currentTimeMillis();
+        long tempoLista = fimLista - inicioLista;
+
+        long inicioMapa = System.currentTimeMillis();
+        boolean encontradoMapa = mapaNomes.get(nomeBusca) != null;
+        long fimMapa = System.currentTimeMillis();
+        long tempoMapa = fimMapa - inicioMapa;
+
+        System.out.println("\nResultado da busca:");
+        System.out.println("ArrayList -> Encontrado: " + encontradoLista + " | Tempo: " + tempoLista + " ms");
+        System.out.println("HashMap   -> Encontrado: " + encontradoMapa + " | Tempo: " + tempoMapa + " ms");
+
+        scanner.close();
+    }
+}
