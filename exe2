@@ -1,0 +1,10 @@
+public class Cidades {
+    public static void main(String[] args) {
+        String[] cidades = {"São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba"};
+
+        System.out.println("Cidades cadastradas:");
+        for (String cidade : cidades) {
+            System.out.println("- " + cidade);
+        }
+    }
+}
