@@ -14,8 +14,6 @@ public class ListaDeProdutos {
         for (String produto : produtos) {
             System.out.println("- " + produto);
         }
-
-        // Removendo um produto da lista
         produtos.remove("Leite");
 
         System.out.println("\nLista após remover 'Leite':");
