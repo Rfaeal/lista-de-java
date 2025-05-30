@@ -1,0 +1,28 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class CadastroPessoas {
+    public static void main(String[] args) {
+        HashMap<String, Integer> pessoas = new HashMap<>();
+
+        pessoas.put("Ana", 28);
+        pessoas.put("Bruno", 35);
+        pessoas.put("Carla", 22);
+        pessoas.put("Diego", 40);
+        pessoas.put("Eduarda", 31);
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o nome de uma pessoa para buscar a idade: ");
+        String nomeBusca = scanner.nextLine();
+
+        if (pessoas.containsKey(nomeBusca)) {
+            int idade = pessoas.get(nomeBusca);
+            System.out.println(nomeBusca + " tem " + idade + " anos.");
+        } else {
+            System.out.println("Pessoa não encontrada no cadastro.");
+        }
+
+        scanner.close();
+    }
+}
